@@ -9,11 +9,11 @@ public class MyConstant {
     public static final String QINIU_BUCKET_NAME = "excited";
 
     //发送邮件的邮箱，要与df.properties中的一致
-    public static final String MAIL_FROM = "ceshihahu@yeah.net";
+    public static final String MAIL_FROM = "2925441676@qq.com";
 
     //域名
     
-    public static final String DOMAIN_NAME = "http://naivee.me/";
+    public static final String DOMAIN_NAME = "http://localhost:8090/";
 
     //三种操作
     public static final int OPERATION_CLICK_LIKE = 1;

@@ -65,7 +65,7 @@ public class LoginService {
         user.setHeadUrl(MyConstant.QINIU_IMAGE_URL +"head.jpg");
 
         //发送邮件
-        //taskExecutor.execute(new MailTask(activateCode,user.getEmail(),javaMailSender,1));
+        taskExecutor.execute(new MailTask(activateCode,user.getEmail(),javaMailSender,1));
 
         //向数据库插入记录
         userMapper.insertUser(user);
@@ -104,4 +104,5 @@ public class LoginService {
     public void activate(String activateCode) {
         userMapper.updateActived(activateCode);
     }
+
 }

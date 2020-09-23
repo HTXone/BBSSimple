@@ -6,6 +6,7 @@ import com.fc.service.PostService;
 import com.fc.service.QiniuService;
 import com.fc.service.UserService;
 import com.fc.util.MyConstant;
+import com.fc.util.Upload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Arrays;
@@ -132,7 +134,7 @@ public class UserController {
 
 
     @RequestMapping("/updateHeadUrl.do")
-    public String updateHeadUrl(MultipartFile myFileName,Model model,HttpSession session) throws IOException {
+    public String updateHeadUrl(MultipartFile myFileName, Model model, HttpSession session, HttpServletRequest request) throws IOException {
         // 文件类型限制
         String[] allowedType = {"image/bmp", "image/gif", "image/jpeg", "image/png"};
         boolean allowed = Arrays.asList(allowedType).contains(myFileName.getContentType());
@@ -145,18 +147,20 @@ public class UserController {
             model.addAttribute("error3","图片大小限制在3M以下哦~");
             return "editProfile";
         }
-        // 包含原始文件名的字符串
-        String fi = myFileName.getOriginalFilename();
-        // 提取文件拓展名
-        String fileNameExtension = fi.substring(fi.indexOf("."), fi.length());
-        // 生成云端的真实文件名
-        String remoteFileName = UUID.randomUUID().toString() + fileNameExtension;
-        qiniuService.upload(myFileName.getBytes(), remoteFileName);
+//        // 包含原始文件名的字符串
+//        String fi = myFileName.getOriginalFilename();
+//        // 提取文件拓展名
+//        String fileNameExtension = fi.substring(fi.indexOf("."), fi.length());
+//        // 生成云端的真实文件名
+//        String remoteFileName = UUID.randomUUID().toString() + fileNameExtension;
+//        qiniuService.upload(myFileName.getBytes(), remoteFileName);
 
+        String picPath=request.getServletContext().getRealPath("/")+"upload/";
+        String url = Upload.fileUpload(myFileName,picPath);
         //更新数据库中头像URL
         int uid = (int) session.getAttribute("uid");
-        userService.updateHeadUrl(uid,MyConstant.QINIU_IMAGE_URL + remoteFileName);
-
+//        userService.updateHeadUrl(uid,MyConstant.QINIU_IMAGE_URL + remoteFileName);
+        userService.updateHeadUrl(uid,url);
         return "redirect:toMyProfile.do";
     }
 
