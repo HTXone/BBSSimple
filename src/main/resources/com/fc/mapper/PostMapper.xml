@@ -81,6 +81,10 @@
     <select id="getTitleByPid" resultType="String">
         select title from post where pid=#{pid}
     </select>
+
+    <delete id="deletePostByPidAndUid">
+        delete from post where pid = #{pid} and uid = #{uid}
+    </delete>
 </mapper>
 
 

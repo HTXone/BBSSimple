@@ -30,4 +30,6 @@ public interface PostMapper {
 
     String getTitleByPid(int pid);
 
+    int deletePostByPidAndUid(int pid,int uid);
+
 }
