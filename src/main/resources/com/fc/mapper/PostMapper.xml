@@ -82,8 +82,8 @@
         select title from post where pid=#{pid}
     </select>
 
-    <delete id="deletePostByPidAndUid">
-        delete from post where pid = #{pid} and uid = #{uid}
+    <delete id="deletePostByPidAndUid" parameterType="java.lang.Integer">
+        delete from post where pid = #{pid}
     </delete>
 </mapper>
 
