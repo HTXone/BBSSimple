@@ -28,6 +28,7 @@
             height: 60%;
             line-height: 60px;
             margin: 0 auto;
+			background-color: white;
         }
         /* 弹出框的两个按钮部分 */
         .footer{
@@ -75,7 +76,7 @@
 						<input type="password" name="password" required>
 					</div>
 					<button id="login-submit">立即登录</button>
-					<button type="button" id= "AAA" onclick="Oshow()">忘记密码</button>
+					<button type="button" id= "AAAB" onclick="Oshow()">忘记密码</button>
 				</form>
 			</div>
 			<div id="register-area">
@@ -101,7 +102,7 @@
 		</div>
 	</div><!-- 主体结束 -->
     <div class="dialog" hidden="hidden" id="AAA">
-        <p class="header">提示文字</p>
+        <p class="header">输入账号</p>
         <input type="email" id="Forget-Email"/>
         <div class="footer">
             <button class="cancel" onclick="Ohidden()">取消</button>
