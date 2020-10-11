@@ -6,7 +6,7 @@
 
 <div class="header clearfix">
     <div class="w">
-        <h1 class="logo"><a href="toIndex.do">HT</a></h1>
+        <h1 class="logo"><a href="toIndex.do">LULUBBS</a></h1>
         <ul class="left-nav">
         </ul>
 

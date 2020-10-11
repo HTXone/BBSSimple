@@ -8,6 +8,42 @@
 	<link rel="stylesheet" type="text/css" href="css/wangEditor.css">
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/post.css">
+	<style>
+		.post{
+
+
+
+			top: 0;
+
+			left: 0;
+
+			width:100%;
+
+			height:100%;
+
+			min-width: 900px;
+
+			z-index:-10;
+
+			zoom: 1;
+
+			background-color: #fff;
+
+			background: url(/image/background.jpg);
+
+			background-repeat: no-repeat;
+
+			background-size: cover;
+
+			-webkit-background-size: cover;
+
+			-o-background-size: cover;
+
+			background-position: center 0;
+
+		}
+
+	</style>
 </head>
 <body>
 <%@ include file="header.jsp" %>
@@ -20,7 +56,7 @@
 		<div class="main-left">
 			
 			<!-- 帖子内容板块 -->
-			<div class="post-content">
+			<div class="post-content post">
 				<div class="post-title">
 					<span class="glyphicon glyphicon-th"></span>&nbsp;${post.title}
 				</div>

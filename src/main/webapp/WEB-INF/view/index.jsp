@@ -6,25 +6,75 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/base.css">
+    <style>
+
+        .post{
+            top: 0;
+
+            left: 0;
+
+            width:100%;
+
+            height:100%;
+
+            min-width: 800px;
+
+            z-index:-10;
+
+            zoom: 1;
+
+            background-color: #fff;
+
+            background: url(/image/background.jpg);
+
+            background-repeat: no-repeat;
+
+            background-size: cover;
+
+            -webkit-background-size: cover;
+
+            -o-background-size: cover;
+
+            background-position: center 0;
+
+        }
+
+        .java{
+            float: left;
+            position: absolute;
+            left: 40px;
+            top: 110px;
+        }
+        .python{
+            float: left;
+            position: absolute;
+            right: 40px;
+            top: 110px;
+        }
+
+    </style>
 </head>
-<body>
+<body >
 <%@ include file="header.jsp" %>
 
-	<div class="main w clearfix">
+</div>
+    <div class="main w clearfix">
+
+
 		<div class="main-left">
 			<div class="share">
 				<div class="share-left"><span></span>&nbsp;最新帖子</div>
 				<div class="share-right">
-					<a href="toPublish.do"><span class="glyphicon glyphicon-pencil"></span>&nbsp;我要发布</a>
+					<a href="toPublish.do"><span class="glyphicon"></span>&nbsp;我要发布</a>
 				</div>
 			</div>
 			<div class="post">
 				<div class="post-wrap">
-					<div class="post-choice">
-						<a href="#" class="post-choice-current">最近</a>
-						<a href="#">最热</a>
-						<a href="#" class="post-choice-last">精华</a>
-					</div>
+<%--					<div class="post-choice">--%>
+<%--						<a href="#" class="post-choice-current">最近</a>--%>
+<%--						<a href="#">最热</a>--%>
+<%--						<a href="#" class="post-choice-last">精华</a>--%>
+<%--					</div>--%>
 
 					<ul class="post-list">
 						<c:forEach items="${pageBean.list}" var="post">
@@ -110,7 +160,10 @@
 
 				</div>
 			</div>
+
 		</div>
+        <img src="/image/java.jpg" class="java" height="730px" width="200px"/>
+        <img src="/image/python.jpg" class="python" height="730px" width="200px"/>
 <%--		<div class="main-right">--%>
 <%--			--%>
 <%--			<div class="hot-user">--%>
