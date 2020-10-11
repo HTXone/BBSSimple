@@ -8,13 +8,49 @@
 	<link rel="stylesheet" type="text/css" href="css/wangEditor.css">
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/profile.css">
+	<style>
+		.m-left{
+
+
+
+			top: 0;
+
+			left: 0;
+
+			width:40%;
+
+			height:100%;
+
+			min-width: 600px;
+
+			z-index:-10;
+
+			zoom: 1;
+
+			background-color: #fff;
+
+			background: url(/image/background.jpg);
+
+			background-repeat: no-repeat;
+
+			background-size: cover;
+
+			-webkit-background-size: cover;
+
+			-o-background-size: cover;
+
+			background-position: center 0;
+
+		}
+
+	</style>
 </head>
 <body>
 <%@ include file="header.jsp" %>
 
 
 	<!-- 中间主体板块 -->
-	<div class="main w clearfix">
+	<div class="main w clearfix post">
 		<div class="m-left">
 			<div class="user-image"><img src="${user.headUrl}"></div>
 			<div class="user-info">
