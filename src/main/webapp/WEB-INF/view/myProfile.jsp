@@ -37,7 +37,7 @@
                             <span class="glyphicon glyphicon-file"></span>&nbsp;
                             <a href="toPost.do?pid=${post.pid}">${post.title}</a>
 
-                            <span class="user-post-time"><span class="post-delete"><a href="/deletePost.do?uid=${sessionScope.uid}&pid=${post.pid}&from=profile">删帖</a></span>发布于 ${post.publishTime}</span>
+                            <span class="user-post-time"><span class="post-delete"><a href="deletePost.do?uid=${sessionScope.uid}&pid=${post.pid}&from=profile">删帖</a></span>发布于 ${post.publishTime}</span>
                         </li>
                     </c:forEach>
 				</ul>
