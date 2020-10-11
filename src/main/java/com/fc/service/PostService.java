@@ -137,5 +137,16 @@ public class PostService {
         }
         return result;
     }
+
+    //删帖
+    public boolean deletePost(int pid, int uid){
+        System.out.println("准备删除："+pid);
+        if(postMapper.deletePostByPidAndUid(pid)==1){
+            //更新用户发帖量
+            userMapper.updatePostCount(uid);
+            return true;
+        }
+        return false;
+    }
 }
 

@@ -138,7 +138,7 @@ public class UserService {
         String verifyCode = userMapper.selectVerifyCode(email);
         System.out.println("verifyCode:"+verifyCode);
         //发送邮件
-        //taskExecutor.execute(new MailTask(verifyCode,email,javaMailSender,2));
+        taskExecutor.execute(new MailTask(verifyCode,email,javaMailSender,2));
     }
 
     public void verifyForgetPassword(String code) {

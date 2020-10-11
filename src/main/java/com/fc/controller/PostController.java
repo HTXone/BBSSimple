@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -46,6 +47,21 @@ public class PostController {
     public String publishPost(Post post) {
         int id = postService.publishPost(post);
         return "redirect:toPost.do?pid="+id;
+    }
+
+    //删帖
+    @RequestMapping("/deletePost.do")
+    public String deletePost(Integer uid, Integer pid, String from){
+        if(postService.deletePost(pid,uid)){
+            System.out.println("delete success");
+            if(from.equals("index"))//从首页删帖，跳转首页
+                return "redirect:toIndex.do";
+            else//从个人信息页删帖，跳转个人信息页
+                return "redirect:toMyProfile.do";
+        }
+        System.out.println("delete fail");
+        return "redirect:toIndex.do";
+
     }
 
 

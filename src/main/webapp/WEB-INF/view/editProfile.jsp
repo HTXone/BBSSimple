@@ -24,14 +24,14 @@
 			<div class="edit-title">
 				签&nbsp;&nbsp;&nbsp;名：<input type="text" name="description" value="${user.description}">
 			</div>
-			<div class="edit-title">
-				位&nbsp;&nbsp;&nbsp;置：<input type="text" name="position" value="${user.description}">
+			<div class="edit-title" hidden="hidden">
+				位&nbsp;&nbsp;&nbsp;置：<input type="text" name="position" value="">
 			</div>
-			<div class="edit-title">
-				学&nbsp;&nbsp;&nbsp;校：<input type="text" name="school" value="${user.school}">
+			<div class="edit-title" hidden="hidden">
+				学&nbsp;&nbsp;&nbsp;校：<input type="text" name="school" value="">
 			</div>
-			<div class="edit-title">
-				工&nbsp;&nbsp;&nbsp;作：<input type="text" name="job" value="${user.job}">
+			<div class="edit-title" hidden="hidden">
+				工&nbsp;&nbsp;&nbsp;作：<input type="text" name="job" value="">
 			</div>
 			<div class="relative">
 				<button class="edit-submit">确认编辑</button>

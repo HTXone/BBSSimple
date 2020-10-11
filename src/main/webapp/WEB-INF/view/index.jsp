@@ -79,6 +79,9 @@
                                             <span class="post-reply-time">${post.replyTime}</span>
                                         </div>
                                         <div class="post-other-right">
+                                            <c:if test="${sessionScope.uid==post.user.uid}">
+                                                <span class="post-delete"><a href="/deletePost.do?uid=${post.user.uid}&pid=${post.pid}&from=index">删帖</a></span>
+                                            </c:if>
                                             <span class="post-reply-count">回复 ${post.replyCount}</span>&nbsp;
                                             <span class="post-like-count">赞 ${post.likeCount}</span>&nbsp;
                                             <span class="post-scan-count">浏览 ${post.scanCount}</span>

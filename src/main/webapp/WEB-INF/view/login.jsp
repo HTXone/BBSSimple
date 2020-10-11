@@ -9,6 +9,49 @@
 	<link rel="stylesheet" type="text/css" href="css/wangEditor.css">
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
+    <style>
+        .dialog{
+            background-color: rgba(255,255, 255, 1);
+            width: 20%;
+            height: 100px;
+            border-radius: 5px;
+            z-index: 1;/*优先*/
+            text-align: center;
+            /* 实现对浏览器窗口的垂直居中 */
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        /* 弹出框的提示文字部分 */
+        .header{
+            height: 60%;
+            line-height: 60px;
+            margin: 0 auto;
+			background-color: white;
+        }
+        /* 弹出框的两个按钮部分 */
+        .footer{
+            height: 40%;
+            display: flex;
+            flex-direction: row;
+        }
+        /* 取消和确认按钮的设置 */
+        .confirm,.cancel{
+            outline: none;
+            background-color: white;
+            width: 50%;
+        }
+        .confirm{
+            border-width: 1px 0px 0px 1px;
+            border-bottom-right-radius:5px;
+        }
+        .cancel{
+            border-width: 1px 0px 0px 0px;
+            border-bottom-left-radius:5px;
+        }
+    </style>
+
 </head>
 <body>
 <%@ include file="header.jsp" %>
@@ -33,7 +76,7 @@
 						<input type="password" name="password" required>
 					</div>
 					<button id="login-submit">立即登录</button>
-					<button type="button" id="forget-password">忘记密码</button>
+					<button type="button" id= "AAAB" onclick="Oshow()">忘记密码</button>
 				</form>
 			</div>
 			<div id="register-area">
@@ -58,6 +101,15 @@
 			</div>
 		</div>
 	</div><!-- 主体结束 -->
+    <div class="dialog" hidden="hidden" id="AAA">
+        <p class="header">输入账号</p>
+        <input type="email" id="Forget-Email"/>
+        <div class="footer">
+            <button class="cancel" onclick="Ohidden()">取消</button>
+            <button class="confirm" id="forget-password">确认</button>
+        </div>
+    </div>
+
 
 
 
@@ -120,7 +172,7 @@
             $.ajax({
                 type:"GET",
                 url:"forgetPassword.do",
-                data:{email:$("#login-email").val()},
+                data:{email:$("#Forget-Email").val()},
                 success:function(response,status,xhr){
                     location.href="afterForgetPassword.do";
                 }
@@ -128,6 +180,15 @@
         });
 	});
 
+    function Oshow(){
+
+        var Out = document.getElementById("AAA");
+        Out.hidden = "";
+    }
+    function Ohidden(){
+        var Out = document.getElementById("AAA");
+        Out.hidden="hidden";
+    }
 
 </script>
 </body>

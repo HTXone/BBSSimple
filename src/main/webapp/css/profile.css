@@ -105,6 +105,11 @@ body{
     color: #666;
 }
 
+.m-left .user-post .user-post-list li span.user-post-time a{
+    font-size: 12px;
+    margin-right:5px;
+}
+
 .m-left .user-post .user-post-list li a{
     font: 15px/2 "微软雅黑";
     color: #259;
