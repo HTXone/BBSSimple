@@ -39,6 +39,19 @@
 
         }
 
+        .java{
+            float: left;
+            position: absolute;
+            left: 40px;
+            top: 110px;
+        }
+        .python{
+            float: left;
+            position: absolute;
+            right: 40px;
+            top: 110px;
+        }
+
     </style>
 </head>
 <body >
@@ -46,6 +59,7 @@
 
 </div>
     <div class="main w clearfix">
+
 
 		<div class="main-left">
 			<div class="share">
@@ -148,6 +162,8 @@
 			</div>
 
 		</div>
+        <img src="/image/java.jpg" class="java" height="730px" width="200px"/>
+        <img src="/image/python.jpg" class="python" height="730px" width="200px"/>
 <%--		<div class="main-right">--%>
 <%--			--%>
 <%--			<div class="hot-user">--%>
